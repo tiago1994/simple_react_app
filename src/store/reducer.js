@@ -39,6 +39,8 @@ const Reducer = (state, action) => {
 
             return {
                 ...state,
+                showMessage: true,
+                message: 'New counter added successfully!',
                 adding: false,
                 counters: new_item,
                 newCard: {
@@ -61,6 +63,8 @@ const Reducer = (state, action) => {
             })
             return {
                 ...state,
+                showMessage: true,
+                message: 'Counter removed successfully!',
                 counters: remove
             };
         case 'ADD_TITLE':
@@ -91,6 +95,12 @@ const Reducer = (state, action) => {
             return {
                 ...state,
                 counters: edit_card
+            }
+        case 'OK_MESSAGE':
+            return {
+                ...state,
+                showMessage: false,
+                message: '',
             }
         default:
             return state;

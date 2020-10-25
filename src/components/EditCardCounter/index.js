@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Context } from '../../store'
 
 const EditCardCounter = (props) => {
-    const [dispatch] = React.useContext(Context);
-
+    const [state, dispatch] = React.useContext(Context);
+    
     const editLine = (text, type) => {
         const new_payload = {
             id: props.id,

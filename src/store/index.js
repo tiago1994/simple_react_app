@@ -2,6 +2,8 @@ import React, { createContext, useReducer } from "react";
 import Reducer from './reducer'
 
 const initialState = {
+    message: '',
+    showMessage: false,
     adding: false,
     newCard: {
         title: '',
