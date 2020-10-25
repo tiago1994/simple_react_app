@@ -5,6 +5,8 @@ import TopDefault from '../../components/TopDefault'
 import { Context } from '../../store'
 import EditCardCounter from '../../components/EditCardCounter'
 import NewCardCounter from '../../components/NewCardCounter'
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
 
 const ConfigScreen = (props) => {
     const [state, dispatch] = React.useContext(Context);
@@ -34,11 +36,13 @@ const ConfigScreen = (props) => {
                         <OptionsNewCounter>
                             <LabelConfig>New Counter</LabelConfig>
                             <ViewCancel onPress={() => dispatch({type: 'STOP_NEW'})}>
-                                <LabelCancel>Cancel</LabelCancel>
+                                <LabelCancel><Icon name="trash" size={18} color={'#19477D'} /> Cancel</LabelCancel>
                             </ViewCancel>
                         </OptionsNewCounter>
                     ):(
-                        <LabelConfig>Selected Counter</LabelConfig>
+                        <ViewSelect>
+                            <LabelConfig>Selected Counter</LabelConfig>
+                        </ViewSelect>
                     )}
                     {!state.adding && state.counters.map((c, k) => {
                         if(c.active){
@@ -88,10 +92,17 @@ const LabelCancel = styled.Text`
     font-weight: bold;
     color: #19477D;
     text-align: center;
+    
 `;
 
 const OptionsNewCounter = styled.View`
     flex-direction: row;
+    margin-bottom: 10px;
+    height: 35px;
+`;
+
+const ViewSelect = styled.View`
+    height: 35px;
     margin-bottom: 10px;
 `;
 
