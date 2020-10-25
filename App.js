@@ -19,13 +19,15 @@ const App = () => {
             style: {
               backgroundColor: '#001D47',
               color: '#FFF',
+              height: 60,
             },
             activeTintColor: '#FF9500',
             inactiveTintColor: '#8E8E93',
             labelStyle: {
               fontSize: 14,
               fontWeight: 'bold',
-              marginTop: -10
+              marginTop: -10,
+              marginBottom: 5
             }
           }}>
           <Tab.Screen

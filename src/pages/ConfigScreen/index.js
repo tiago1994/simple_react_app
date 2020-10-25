@@ -110,11 +110,11 @@ const LabelCancel = styled.Text`
 const OptionsNewCounter = styled.View`
     flex-direction: row;
     margin-bottom: 10px;
-    height: 35px;
+    height: 45px;
 `;
 
 const ViewSelect = styled.View`
-    height: 35px;
+    height: 45px;
     margin-bottom: 10px;
 `;
 
